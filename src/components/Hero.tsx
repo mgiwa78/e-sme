@@ -20,22 +20,15 @@ const Hero = ({ products, storeDetails }: Props) => {
         <div className="d-flex flex-column justify-content-center h-100 position-relative z-20">
           <div className="d-flex flex-column h-100 justify-content-end pb-10 pb-lg-12 position-relative">
             <div className="container container-xxl">
-              <p
-                className="text-white font-weight-bold fs-20 mb-3"
-                data-animate="fadeInUp"
-              >
+              <p className="text-white font-weight-bold fs-20 mb-3">
                 {storeDetails?.description || ""}
               </p>
-              <h1
-                className="mb-7 fs-60 fs-xxl-100 lh-1 text-white"
-                data-animate="fadeInUp"
-              >
+              <h1 className="mb-7 fs-60 fs-xxl-100 lh-1 text-white">
                 {storeDetails?.siteName || ""}
               </h1>
               <a
                 href="#"
                 className="btn btn-white text-uppercase letter-spacing-05"
-                data-animate="fadeInUp"
               >
                 Shop Now
               </a>

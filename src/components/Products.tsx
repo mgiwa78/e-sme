@@ -1,11 +1,15 @@
+"use client";
 import { TProduct } from "@/types/Product";
 import { formatToNaira } from "@/utils/format";
 import React from "react";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { addItem } from "@/redux/slice/cartSlice";
 
 type Props = { products: Array<TProduct>; storeSlug: string };
 
 const Products = ({ products, storeSlug }: Props) => {
+  const dispatch = useDispatch();
   return (
     <section className="pt-11 pt-lg-5 pb-lg-10" data-animated-id="3">
       <div className="container">
@@ -31,6 +35,7 @@ const Products = ({ products, storeSlug }: Props) => {
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <a
                       href="#"
+                      onClick={() => dispatch(addItem(product))}
                       data-toggle="tooltip"
                       title=""
                       className="add-to-cart d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border"

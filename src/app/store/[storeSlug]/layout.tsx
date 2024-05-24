@@ -16,6 +16,8 @@ import { fetchStoreDetails } from "@/redux/slice/storeSlice";
 import { fetchCategories } from "@/redux/slice/categoriesSlice";
 import { selectCategories } from "@/redux/selectors/category";
 import Loading from "../../../components/Loading";
+import MobileNavigation from "@/components/MobileNavigation";
+import Head from "next/head";
 
 type Props = {};
 
@@ -54,6 +56,7 @@ export default function ClientLayout({
     <>
       {storeDetails && (
         <>
+          <MobileNavigation />
           <Header storeDetails={storeDetails} />
           <main id="content">{children}</main>
           <Footer />

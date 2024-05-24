@@ -12,6 +12,7 @@ import { selectItemsStatus, selectProducts } from "@/redux/selectors/products";
 import { selectStoreDetails } from "@/redux/selectors/store";
 import { fetchProducts } from "@/redux/slice/productSlice";
 import { AppDispatch } from "@/redux/store";
+import Head from "next/head";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -44,6 +45,9 @@ export default (props: Props) => {
     <>
       {products && storeDetails && (
         <>
+          <Head>
+            <title>{storeDetails.siteName}</title>
+          </Head>
           <Home products={products} storeDetails={storeDetails} />
         </>
       )}
