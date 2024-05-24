@@ -1,7 +1,8 @@
+import { TStore } from "@/types/Store";
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
+type Props = { storeDetails: TStore };
 
 const Navigation = (props: Props) => {
   return (

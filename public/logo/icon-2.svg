@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="107.8899 298.2156 53.1611 53.1611" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient data-v-fde0c5aa="" gradientTransform="rotate(25)" id="731d991d-ee0b-4eff-8b20-aeb3cb5817b4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop data-v-fde0c5aa="" offset="0" stop-color="#288B58" stop-opacity="1"/>
+      <stop data-v-fde0c5aa="" offset="1" stop-color="#1522F1" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 0H0v32h32V0zm-8.677 20.802l-2.52 2.52L16 28.125l-2.52-2.52 4.802-4.802L16 18.52l-4.802 4.802-2.52-2.52L13.48 16l-2.282-2.282-4.803 4.802L3.875 16l4.802-4.802 2.52-2.52L16 3.875l2.52 2.52-4.802 4.802L16 13.48l4.802-4.802 2.52 2.52L18.52 16l2.282 2.282 4.802-4.802 2.52 2.52-4.801 4.802z" transform="matrix(1.6612830162048338, 0, 0, 1.6612830162048338, 107.8899170739936, 298.2156416507905)"/>
+</svg>

@@ -1,12 +1,14 @@
+"use client";
 import React from "react";
 import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
 import TopBar from "./TopBar";
 import Link from "next/link";
+import { TStore } from "@/types/Store";
 
-type Props = {};
+type Props = { storeDetails: TStore };
 
-const Header = (props: Props) => {
+const Header = ({ storeDetails }: Props) => {
   return (
     <header
       className="main-header navbar-light header-sticky header-sticky-smart"
@@ -22,10 +24,11 @@ const Header = (props: Props) => {
                     className="navbar-brand  mx-xxl-10 d-inline-block py-0"
                     href="index-2.html"
                   >
-                    <img src="images/logo.png" alt="Furnitor" />
+                    {/* <img src="logo/logo.png" alt="Furnitor" /> */}
+                    {storeDetails?.siteName || ""}
                   </a>
                 </div>
-                <Navigation />
+                <Navigation storeDetails={storeDetails} />
 
                 <div className="col-2">
                   <ul className="navbar-nav flex-row justify-content-xl-end d-flex flex-wrap text-body py-0 navbar-right">
@@ -70,10 +73,11 @@ const Header = (props: Props) => {
                 </button>
                 <div className="mx-auto">
                   <a
-                    className="navbar-brand d-inline-block mr-0"
+                    className="navbar-brand d-inline-block mr-0 fw-bolder font-extrabold"
                     href="index-2.html"
                   >
-                    <img src="images/logo.png" alt="Furnitor" />
+                    {/* <img src="images/logo.png" alt="Furnitor" /> */}{" "}
+                    {storeDetails?.siteName || ""}
                   </a>
                 </div>
                 <a

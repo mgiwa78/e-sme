@@ -1,6 +1,10 @@
-import Cart from "@/components/Cart";
-import Footer from "@/components/Footer";
+"use client";
+
 import Header from "@/components/Header";
+import { store } from "@/redux/store";
+import { Provider } from "react-redux";
+
+type Props = {};
 
 export default function ClientLayout({
   children,
@@ -9,10 +13,7 @@ export default function ClientLayout({
 }>) {
   return (
     <>
-      <Header />
-      <main id="content">{children}</main>
-      <Footer />
-      <Cart />
+      <Provider store={store}>{children}</Provider>
     </>
   );
 }
