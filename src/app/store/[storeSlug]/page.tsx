@@ -4,7 +4,10 @@ import Categories from "@/components/Categories";
 import Home from "@/components/Hero";
 import Loading from "@/components/Loading";
 import Products from "@/components/Products";
-import { selectCategories } from "@/redux/selectors/category";
+import {
+  selectCategories,
+  selectCategoriesStatus,
+} from "@/redux/selectors/category";
 import { selectItemsStatus, selectProducts } from "@/redux/selectors/products";
 import { selectStoreDetails } from "@/redux/selectors/store";
 import { fetchProducts } from "@/redux/slice/productSlice";
@@ -22,6 +25,7 @@ export default (props: Props) => {
   const { storeSlug }: any = params;
   const dispatch = useDispatch<AppDispatch>();
   const categories = useSelector(selectCategories);
+  const categoriesStatus = useSelector(selectCategoriesStatus);
 
   const products = useSelector(selectProducts);
   const status = useSelector(selectItemsStatus);
@@ -43,9 +47,9 @@ export default (props: Props) => {
           <Home products={products} storeDetails={storeDetails} />
         </>
       )}
-      {categories && (
+      {categoriesStatus === "succeeded" && (
         <>
-          <Categories categories={categories} storeSlug={storeSlug || ""} />
+          <Categories categories={categories} />
         </>
       )}
 
