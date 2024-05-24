@@ -1,6 +1,7 @@
 import { TProduct } from "@/types/Product";
 import { formatToNaira } from "@/utils/format";
 import React from "react";
+import Image from "next/image";
 
 type Props = { products: Array<TProduct>; storeSlug: string };
 
@@ -14,15 +15,19 @@ const Products = ({ products, storeSlug }: Props) => {
             <div
               className="col-sm-6 col-lg-3 mb-8 fadeInUp animated"
               data-animate="fadeInUp"
+              key={product._id}
             >
               <div className="card border-0 hover-change-content product">
                 <div className="card-img-top position-relative">
-                  <div
-                    style={{
-                      backgroundImage: `url(${product?.image})`,
-                    }}
-                    className="card-img ratio bg-img-cover-center ratio-1-1"
-                  ></div>
+                  <div className="card-img ratio bg-img-cover-center ratio-1-1 position-relative">
+                    <Image
+                      src={product?.image}
+                      alt={product.name}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded"
+                    />
+                  </div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <a
                       href="#"

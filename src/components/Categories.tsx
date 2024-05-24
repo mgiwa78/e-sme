@@ -1,10 +1,12 @@
 import { TCategory } from "@/types/Category";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 type Props = { categories: Array<TCategory>; storeSlug: string };
 
 const Categories = ({ categories, storeSlug }: Props) => {
+  console.log(categories[0]?.image);
   return (
     <section className="py-6">
       <div className="container-fluid px-6">
@@ -15,10 +17,12 @@ const Categories = ({ categories, storeSlug }: Props) => {
           {categories?.map((category) => (
             <div className="box col-span-6" data-animate="fadeInUp">
               <div className="card border-0">
-                <img
+                <Image
                   src={category?.image}
                   alt={category?.name}
-                  className="card-img"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded"
                 />
                 <div className="card-img-overlay d-inline-flex flex-column px-6 py-4">
                   <h3 className="card-title fs-28 uppercase">
