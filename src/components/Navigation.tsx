@@ -18,8 +18,8 @@ const Navigation = (props: Props) => {
             </Link>
           </li>
           <li className="nav-item  py-2 py-xl-5 px-0 px-xl-4">
-            <Link className="nav-link  p-0" href={`/store/${storeSlug}/shop`}>
-              Shop
+            <Link className="nav-link  p-0" href={`/store/${storeSlug}/products`}>
+              Products
             </Link>
           </li>
           <li className="nav-item  py-2 py-xl-5 px-0 px-xl-4">

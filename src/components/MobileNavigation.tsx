@@ -18,7 +18,7 @@ const MobileNavigation = (props: Props) => {
       <div className="pt-5 pb-7 card border-0 h-100">
         <div className="d-flex align-items-center card-header border-0 py-0 pl-8 pr-7 mb-9 bg-transparent">
           <a href="index-2.html" className="d-block w-52px">
-            <img src="/images/short_logo.png" alt={storeSlug} />
+            {storeDetails?.siteName || ""}
           </a>
           <span className="canvas-close d-inline-block text-right fs-24 ml-auto lh-1 text-primary">
             <i className="fal fa-times"></i>
@@ -56,26 +56,27 @@ const MobileNavigation = (props: Props) => {
         </div>
         <div className="card-footer bg-transparent border-0 mt-auto pl-8 pr-7 pb-0 pt-4">
           <ul className="list-inline d-flex align-items-center mb-3">
-            <li className="list-inline-item mr-4">
-              <a href="#" className="fs-20 lh-1">
-                <i className="fab fa-pinterest-p"></i>
-              </a>
-            </li>
-            <li className="list-inline-item mr-4">
-              <a href="#" className="fs-20 lh-1">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li className="list-inline-item mr-4">
-              <a href="#" className="fs-20 lh-1">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li className="list-inline-item">
-              <a href="#" className="fs-20 lh-1">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
+            {storeDetails?.facebookUrl && (
+              <li className="list-inline-item mr-4">
+                <a href={storeDetails?.facebookUrl} className="fs-20 lh-1">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </li>
+            )}
+            {storeDetails?.instagramUrl && (
+              <li className="list-inline-item mr-4">
+                <a href={storeDetails?.instagramUrl} className="fs-20 lh-1">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+            )}
+            {storeDetails?.twitterUrl && (
+              <li className="list-inline-item">
+                <a href={storeDetails?.twitterUrl} className="fs-20 lh-1">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+            )}
           </ul>
           <p className="mb-0 text-gray">
             © 2024 {storeDetails?.siteName}.

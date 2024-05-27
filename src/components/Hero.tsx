@@ -2,6 +2,9 @@ import { TProduct } from "@/types/Product";
 import { TStore } from "@/types/Store";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { useParams } from "next/navigation";
 
 type Props = { products: Array<TProduct>; storeDetails: TStore };
 
@@ -26,12 +29,12 @@ const Hero = ({ products, storeDetails }: Props) => {
               <h1 className="mb-7 fs-60 fs-xxl-100 lh-1 text-white">
                 {storeDetails?.siteName || ""}
               </h1>
-              <a
-                href="#"
+              <Link
+                href={`/store/${storeDetails?.slug}/products`}
                 className="btn btn-white text-uppercase letter-spacing-05"
               >
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </div>

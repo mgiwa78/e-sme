@@ -33,8 +33,7 @@ const Products = ({ products, storeSlug }: Props) => {
                     />
                   </div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
-                    <a
-                      href="#"
+                    <span
                       onClick={() => dispatch(addItem(product))}
                       data-toggle="tooltip"
                       title=""
@@ -42,7 +41,7 @@ const Products = ({ products, storeSlug }: Props) => {
                       data-original-title="Add to cart"
                     >
                       <i className="far fa-shopping-basket"></i>
-                    </a>
+                    </span>
                     <a
                       href="#"
                       data-toggle="tooltip"

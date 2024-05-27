@@ -5,10 +5,13 @@ import Navigation from "./Navigation";
 import TopBar from "./TopBar";
 import Link from "next/link";
 import { TStore } from "@/types/Store";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 type Props = { storeDetails: TStore };
 
 const Header = ({ storeDetails }: Props) => {
+  const cartItems = useSelector((state: RootState) => state.cart.items);
   return (
     <section
       className="main-header navbar-light header-sticky header-sticky-smart"
@@ -21,7 +24,7 @@ const Header = ({ storeDetails }: Props) => {
               <div className="row align-items-center">
                 <div className="col-2">
                   <a
-                    className="navbar-brand  mx-xxl-10 d-inline-block py-0"
+                    className="navbar-brand  fw-bolder mx-xxl-10 d-inline-block py-0"
                     href="index-2.html"
                   >
                     {/* <img src="logo/logo.png" alt="Furnitor" /> */}
@@ -32,12 +35,12 @@ const Header = ({ storeDetails }: Props) => {
 
                 <div className="col-2">
                   <ul className="navbar-nav flex-row justify-content-xl-end d-flex flex-wrap text-body py-0 navbar-right">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a className="nav-link pr-3 py-0" href="#">
                         <i className="far fa-user-alt"></i>
                       </a>
-                    </li>
-                    <li className="nav-item">
+                    </li> */}
+                    {/* <li className="nav-item">
                       <a
                         className="nav-link position-relative px-3 py-0"
                         href="#"
@@ -45,7 +48,7 @@ const Header = ({ storeDetails }: Props) => {
                         <i className="far fa-heart"></i>
                         <span className="position-absolute number">0</span>
                       </a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a
                         className="nav-link position-relative px-3 menu-cart py-0"
@@ -54,7 +57,9 @@ const Header = ({ storeDetails }: Props) => {
                         data-canvas-options='{"container":".cart-canvas"}'
                       >
                         <i className="far fa-shopping-basket"></i>
-                        <span className="position-absolute number">0</span>
+                        <span className="position-absolute number">
+                          {cartItems.length || 0}
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -73,8 +78,9 @@ const Header = ({ storeDetails }: Props) => {
                 </button>
                 <div className="mx-auto">
                   <a
-                    className="navbar-brand d-inline-block mr-0 fw-bolder font-extrabold"
+                    className="navbar-brand d-inline-block mr-0 fw-bold "
                     href="index-2.html"
+                    style={{ fontWeight: 600 }}
                   >
                     {/* <img src="images/logo.png" alt="Furnitor" /> */}{" "}
                     {storeDetails?.siteName || ""}

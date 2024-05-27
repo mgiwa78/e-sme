@@ -11,7 +11,7 @@ const Categories = ({ categories }: Props) => {
       <div className="container-fluid px-8 px-lg-10">
         <div className="row px-lg-10">
           {categories?.map((category) => (
-            <div className="col-6 col-md-4 col-lg-3 mb-4" key={category._id}>
+            <div className="col-12 col-md-6 col-lg-3 mb-4" key={category._id}>
               <div className="card border-0">
                 <Image
                   src={category?.image}
