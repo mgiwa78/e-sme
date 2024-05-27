@@ -9,6 +9,8 @@ import {
   decrementItem,
 } from "@/redux/slice/cartSlice";
 import { formatToNaira } from "@/utils/format";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 type Props = {};
 
@@ -18,6 +20,8 @@ const Cart = (props: Props) => {
   const products = useSelector((state: RootState) => state.product.items);
   const isLoading =
     useSelector((state: RootState) => state.product.status) === "loading";
+  const params = useParams();
+  const { storeSlug }: any = params;
 
   const spinnerStyle = {
     display: "inline-block",
@@ -43,10 +47,7 @@ const Cart = (props: Props) => {
       <form className="h-100">
         <div className="card border-0 pt-5 pb-7 h-100">
           <div className="px-6 text-right">
-            <span
-              className="canvas-close d-inline-block fs-24 mb-1 ml-auto lh-1 text-primary"
-              onClick={() => dispatch(clearCart())}
-            >
+            <span className="canvas-close d-inline-block fs-24 mb-1 ml-auto lh-1 text-primary">
               <i className="fal fa-times"></i>
             </span>
           </div>
@@ -138,17 +139,13 @@ const Cart = (props: Props) => {
               className="form-control w-100 text-primary mb-4"
               placeholder="Enter coupon code here"
             />
-            <input
-              type="submit"
+
+            <Link
+              href={`/store/${storeSlug}/checkout`}
               className="btn btn-primary btn-block mb-2"
-              value="Check Out"
-            />
-            <a
-              href="#"
-              className="d-block fs-14 text-uppercase letter-spacing-05 text-center font-weight-bold"
             >
-              View Cart
-            </a>
+              Check Out
+            </Link>
           </div>
         </div>
       </form>
